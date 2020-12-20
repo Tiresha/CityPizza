@@ -1,0 +1,89 @@
+﻿<Window x:Class="CityPizza.FrontEnd.Beverages"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CityPizza.FrontEnd"
+        mc:Ignorable="d"
+        Title="Beverages"  Height="700" Width="480" Icon="D:/CityPizza/CityPizza/Images/CityPizzaLogo.png">
+    <Border Padding="10">
+        <StackPanel>
+            <Label Content="City Pizza" FontSize="30" HorizontalAlignment="Left" FontWeight="UltraBold"/>
+            <Label Content="Order Details" FontSize="16" HorizontalAlignment="Left" FontWeight="Bold"/>
+            <Label Content="Beverages" FontSize="13" FontWeight="Bold" FontStyle="Italic" Grid.Column="0" Grid.Row="0"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <!-- Beverages -->
+                <Label Content="Pepsi" FontSize="12" Grid.Column="0" Grid.Row="2"></Label>
+                <Label Content="Diet Pepsi" FontSize="12" Grid.Column="0" Grid.Row="3"></Label>
+                <Label Content="7-Up" FontSize="12" Grid.Column="0" Grid.Row="4"></Label>
+                <Label Content="Mug" FontSize="12" Grid.Column="0" Grid.Row="5"></Label>
+                <Label Content="Dr.Pepper" FontSize="12" Grid.Column="0" Grid.Row="6"></Label>
+                <Label Content="Crush" FontSize="12" Grid.Column="0" Grid.Row="7"></Label>
+                <Label Content="Schweppes" FontSize="12" Grid.Column="0" Grid.Row="8"></Label>
+                <Label Content="Mt.Dew" FontSize="12" Grid.Column="0" Grid.Row="9"></Label>
+
+                <!-- Table Headings -->
+                <Label Content="Per Unit Price" Grid.Column="1" Grid.Row="1" FontWeight="Bold" />
+                <Label Content="Qty" Grid.Column="2" Grid.Row="1" FontWeight="Bold"/>
+                <Label Content="Amount" Grid.Column="3" Grid.Row="1" FontWeight="Bold"/>
+
+                <!-- Per Unit Prices -->
+                <Label x:Name="PepsiUnitPrice" Grid.Column="1" Grid.Row="2" HorizontalContentAlignment="Right" />
+                <Label x:Name="DietPepsiUnitPrice" Grid.Column="1" Grid.Row="3" HorizontalContentAlignment="Right" />
+                <Label x:Name="SevenUpUnitPrice" Grid.Column="1" Grid.Row="4" HorizontalContentAlignment="Right" />
+                <Label x:Name="MugUnitPrice" Grid.Column="1" Grid.Row="5" HorizontalContentAlignment="Right" />
+                <Label x:Name="DrPepperUnitPrice" Grid.Column="1" Grid.Row="6" HorizontalContentAlignment="Right" />
+                <Label x:Name="CrushUnitPrice" Grid.Column="1" Grid.Row="7" HorizontalContentAlignment="Right" />
+                <Label x:Name="SchweppesUnitPrice" Grid.Column="1" Grid.Row="8" HorizontalContentAlignment="Right" />
+                <Label x:Name="MtDewUnitPrice" Grid.Column="1" Grid.Row="9" HorizontalContentAlignment="Right" />
+
+                <!-- Qty -->
+                <ComboBox x:Name="PepsiQty" Grid.Column="2" Grid.Row="2" Margin="0,2,0,2" />
+                <ComboBox x:Name="DietPepsiQty" Grid.Column="2" Grid.Row="3" Margin="0,2,0,2" />
+                <ComboBox x:Name="SevenUpQty" Grid.Column="2" Grid.Row="4" Margin="0,2,0,2"/>
+                <ComboBox x:Name="MugQty" Grid.Column="2" Grid.Row="5" Margin="0,2,0,2" />
+                <ComboBox x:Name="DrPepperQty" Grid.Column="2" Grid.Row="6" Margin="0,2,0,2" />
+                <ComboBox x:Name="CrushQty" Grid.Column="2" Grid.Row="7" Margin="0,2,0,2"/>
+                <ComboBox x:Name="SchweppesQty" Grid.Column="2" Grid.Row="8" Margin="0,2,0,2"/>
+                <ComboBox x:Name="MtDewQty" Grid.Column="2" Grid.Row="9" Margin="0,2,0,2"/>
+
+                <!-- Amount -->
+                <Label x:Name="PepsiAmount" Grid.Column="3" Grid.Row="2" HorizontalContentAlignment="Right" />
+                <Label x:Name="DietPepsiAmount" Grid.Column="3" Grid.Row="3" HorizontalContentAlignment="Right" />
+                <Label x:Name="SevenUpAmount" Grid.Column="3" Grid.Row="4" HorizontalContentAlignment="Right" />
+                <Label x:Name="MugAmount" Grid.Column="3" Grid.Row="5" HorizontalContentAlignment="Right" />
+                <Label x:Name="DrPepperAmount" Grid.Column="3" Grid.Row="6" HorizontalContentAlignment="Right" />
+                <Label x:Name="CrushAmount" Grid.Column="3" Grid.Row="7" HorizontalContentAlignment="Right" />
+                <Label x:Name="SchweppesAmount" Grid.Column="3" Grid.Row="8" HorizontalContentAlignment="Right" />
+                <Label x:Name="MtDewAmount" Grid.Column="3" Grid.Row="9" HorizontalContentAlignment="Right" />
+            </Grid>
+            <DataGrid Margin="0,15,0,0">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header = "Beverage Item" Binding = "{Binding Name}" Width="2*"/>
+                    <DataGridTextColumn Header = "Per Unit Price" Binding = "{Binding Title}" Width="*"/>
+                    <DataGridTextColumn Header = "Qty" Binding = "{Binding WasReElected}" Width="*"/>
+                    <DataGridTextColumn Header = "Amount" Binding="{Binding Name}" Width="*" />
+                </DataGrid.Columns>
+            </DataGrid>
+            <Button x:Name="BackToOrder" Content="Back To Order Details" Margin="150,20,150,0" Height="28" Click="BackToOrder_Click" />
+        </StackPanel>
+    </Border>
+</Window>

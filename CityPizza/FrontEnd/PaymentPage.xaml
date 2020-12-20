@@ -1,0 +1,52 @@
+﻿<Window x:Class="CityPizza.FrontEnd.PaymentPage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CityPizza.FrontEnd"
+        mc:Ignorable="d"
+        Title="PaymentPage" Height="500" Width="500" Icon="D:/CityPizza/CityPizza/Images/CityPizzaLogo.png">
+    <Border Padding="10">
+        <StackPanel>
+            <Label Content="City Pizza" FontSize="30" HorizontalAlignment="Left" FontWeight="UltraBold"/>
+            <Label Content="Payment Details" FontSize="15" HorizontalAlignment="Left" FontWeight="Bold"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="0.5*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="0.5*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0" Grid.Column="0" Margin="50,0,0,0">Item Sub Total</Label>
+                <Label Grid.Row="1" Grid.Column="0" Margin="50,0,0,0">Sales Tax</Label>
+                <Label Grid.Row="2" Grid.Column="0" Margin="50,0,0,0">Service Fee</Label>
+                <Label Grid.Row="3" Grid.Column="0" Margin="50,0,0,0">Delivery Fee</Label>
+                <Label Grid.Row="4" Grid.Column="0" Margin="50,0,0,0">Miscellaneous Fee</Label>
+                <Label Grid.Row="5" Grid.Column="0" FontWeight="Bold" Margin="50,0,0,0">Total</Label>
+
+                <TextBox Grid.Row="0" Grid.Column="2" x:Name="SubTotal" Margin="2,2,2,2" />
+                <TextBox Grid.Row="1" Grid.Column="2" x:Name="SalesTax" Margin="2,2,2,2"/>
+                <TextBox Grid.Row="2" Grid.Column="2" x:Name="ServiceFee" Margin="2,2,2,2"/>
+                <TextBox Grid.Row="3" Grid.Column="2" x:Name="DeliveryFee" Margin="2,2,2,2"/>
+                <TextBox Grid.Row="4" Grid.Column="2" x:Name="MiscFee" Margin="2,2,2,2"/>
+                <TextBox Grid.Row="5" Grid.Column="2" x:Name="Total" Margin="2,2,2,2"/>
+            </Grid>
+            <StackPanel Margin="0,20,0,0">
+                <RadioButton Grid.Row="6" Grid.Column="0" Content="Cash" Margin="20,0,0,10" ></RadioButton>
+                <RadioButton Grid.Row="7" Grid.Column="0" Content="Credit" Margin="20,0,0,10" ></RadioButton>
+                <RadioButton Grid.Row="8" Grid.Column="0" Content="Debit" Margin="20,0,0,10"></RadioButton>
+            </StackPanel>
+            <Button x:Name="Pay" Content="Pay" Margin="190,20,190,0" Height="28" />
+            <Button x:Name="BackToOrder" Content="Back To Order Details" Margin="170,20,170,0" Height="28" Click="BackToOrder_Click" />
+
+        </StackPanel>
+    </Border>
+</Window>
